@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        Person person = new PersonBuilder()
+        Person person = new PersonBuilderImpl()
                 .withName("Vova")
                 .withSurname("Troshin")
                 .withAge(2)
@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Child: " + child.toString());
 
         try{
-            new PersonBuilder()
+            new PersonBuilderImpl()
                     .withName("Test")
                     .withSurname("Testovich")
                     .build();
@@ -27,7 +27,7 @@ public class Main {
         }
 
         try{
-            new PersonBuilder()
+            new PersonBuilderImpl()
                     .withName("A")
                     .withSurname("B")
                     .withAge(-10)

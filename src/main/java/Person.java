@@ -4,7 +4,18 @@ public class Person {
     private Integer age;
     private String address;
 
-    protected Person(String name, String surname, Integer age, String address) {
+    public Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public Person(String name, String surname, Integer age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+
+    public Person(String name, String surname, Integer age, String address) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -61,11 +72,13 @@ public class Person {
     }
 
     public void happyBirthday() {
-        this.age++;
+        if (hasAge()){
+            this.age++;
+        }
     }
 
-    public PersonBuilder newChildBuilder(){
-        return new PersonBuilder()
+    public PersonBuilderImpl newChildBuilder(){
+        return new PersonBuilderImpl()
                 .withSurname(this.surname)
                 .withAge(12)
                 .withAddress(this.address);
