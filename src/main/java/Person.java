@@ -26,22 +26,8 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        if (this.name != null) {
-            return;
-        }
-        this.name = name;
-    }
-
     public String getSurname() {
         return surname;
-    }
-
-    public void setSurname(String surname) {
-        if (this.surname != null) {
-            return;
-        }
-        this.surname = surname;
     }
 
     public Integer getAge() {
